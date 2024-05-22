@@ -50,7 +50,6 @@ public class PostagemController {
 	//SELECT * FROM tb_postagens WHERE titulo = "titulo";
 
 		@GetMapping("/titulo/{titulo}")//localhost:8080/postagens/titulo/Postagem 02
-
 		public ResponseEntity<List<Postagem>> getByTitulo(@PathVariable String titulo){
 			return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
 
