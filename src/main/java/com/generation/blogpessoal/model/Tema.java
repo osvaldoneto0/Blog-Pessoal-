@@ -28,6 +28,12 @@ public class Tema {
 	@Size(min = 4, max = 100,  message = "O campo Descrição deve ter no mínimo 4 caracteres e no máximo 100 caracteres")
 	private String descricao;
 
+	//relacionamento
+	/*
+	 * vamos definir a forma de trabalho para retorno desses dados- Lazy modo preguiçoso vem carregando os dados conforme a necessidade
+	 * mappeamento do relacionamento recebe nome de tema
+	 * 
+	 */
 	@OneToMany(fetch = FetchType.LAZY,mappedBy = "tema" , cascade =CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
